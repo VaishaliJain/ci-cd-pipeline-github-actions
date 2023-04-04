@@ -28,14 +28,19 @@ jobs:
         run: |
           pip install pytest pytest-cov
           pytest tests/ --doctest-modules --junitxml=junit/test-results.xml --cov=src --cov-report=xml --cov-report=html
-      - name: Upload test report file
+      - name: Upload test results file
         uses: actions/upload-artifact@v3
         with:
-          name: test-report-file-xml
-          path: /home/runner/work/ci-cd-pipeline-github-actions/ci-cd-pipeline-github-actions/junit/test-results.xml
+          name: test-results-file-xml
+          path: junit/test-results.xml
       - name: Upload coverage report file
         uses: actions/upload-artifact@v3
         with:
           name: coverage-report-file-xml
           path: coverage.xml
+      - name: Upload coverage report html file
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage-report-file-html
+          path: htmlcov
 
