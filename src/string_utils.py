@@ -9,11 +9,11 @@ class StringUtils:
     """
 
     @staticmethod
-    def custom_join_strings(a, b):
-      """
+    def join_strings_with_hyphen(a, b):
+        """
       Custom join two strings with "-" in between
       :param a: First string
       :param b: Second string
       :return: Result of custom string join
       """
-      return a + "-" + b
+        return a + "-" + b
